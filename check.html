@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>SudokuX</title>
+</head>
+
+<style>
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    #container {
+        border: 2px solid rgb(8, 8, 8);
+        display: grid;
+        grid-template-columns: repeat(9, 11.11%);
+        margin-left: 25%;
+        margin-right: 20%;
+        margin-top: 10%;
+        width: 45%;
+        
+    }
+
+    input {
+        height: 50px;
+        text-align: center0;
+        font-size: 20px;
+    }
+
+    body{
+        background-color: rgb(213, 219, 221);
+        height: 1000px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .site-header{
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(57deg,#00c6a7,#1e4d92);
+        clip-path: polygon(0% 0%,100% 0%,100% 90%,0% 100%);
+    }
+
+    nav{
+        width: 100%;
+        height: 100px;
+        /* background-color: rgb(15, 15, 15); */
+        display: flex;
+        color: white;
+    }
+
+    .logo{
+        width: 50%;
+        height: 100px;
+    }
+
+    .logo h1{
+        line-height: 60px;
+        padding-left: 50px;
+    }
+
+    .menu{
+        width: 50%;
+        height: 100px;
+        /* background-color:rgb(15, 15,15); */
+    }
+
+    .menu ul{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items:center;
+    }
+
+    .menu ul li{
+        list-style: none;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .menu ul li a{
+        text-decoration: none;
+        padding-right: 50px;
+        color: white;
+    }
+
+    .menu ul li a:hover{
+        background: linear-gradient(57deg,#1e4d92,#00c6a7);
+    }
+    
+    section{
+        display: flex;
+    }
+
+    .left{
+        width: 70%;
+        height: auto;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .left img{
+        width: 1000px;
+        height: 500px;
+    }
+
+    .right{
+        width: 30%;
+        height: 300px;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+        padding: 40px;
+    }
+
+    .right h1{
+        font-size: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .right p{
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+
+    .right button{
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        background: linear-gradient(57deg,#00c6a7,#1e4d92);
+        border-radius: 4px;
+        padding: 15px 25px;
+    }
+
+    .right button:hover{
+        background: linear-gradient(57deg,#1e4d92,#00c6a7);
+    }
+
+ 
+    .footer{
+        
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        position: fixed;
+        bottom: 110px;
+    
+        
+    }
+
+    .row{
+        display: flex;
+        background: linear-gradient(57deg,#00c6a7,#1e4d92);
+        
+        
+    }
+
+ 
+    .footer-col{
+        width: 25%;
+        padding: 0 50px;
+        
+    }
+
+    .footer-col ul li a{
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .footer-col ul li a:hover{
+        background: linear-gradient(57deg,#1e4d92,#00c6a7);
+
+    }
+
+    .footer-col h4{
+        font-size: 20px;
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
+
+    .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: tomato;
+        height: 2px;
+        box-sizing: border-box;
+    }
+
+    
+    
+</style>
+
+<body>
+    <header class="site-header">
+        <nav>
+            <div class="logo">
+             <h1>
+                 SudokuX
+             </h1>
+            </div>
+
+            
+            <div class="menu">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Rules">Rules to Play</a></li>
+                <li><a href="#Feedback">Feedback</a></li>
+                <li><a href="#Contact Us">Contact Us</a></li>
+            </ul>
+            </div>
+            
+
+           
+        </nav>
+
+        <section>
+            <div class="left">
+                <img src="play-removebg.png">
+            </div>
+
+            <div class="right">
+                <h1>Sudoku</h1>
+                <p>Best game for Brainstorming</p>
+                <button>PLAY</button>
+            </div>
+        </section>
+
+       
+    </header>
+
+    <div id="container">
+
+    </div>
+
+    <footer class="footer">
+        <div class="box">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Privacy Policies</a></li>
+                            <li><a href="#">Affliliate Program</a></li>
+                        </ul>
+                    
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                        <ul>
+                            <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Rules</a></li>
+                            
+                        </ul>
+                    
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#">facebook</a>
+                            <a href="#">twitter</a>
+                            <a href="#">instagram</a>
+                            <a href="#">linkedin-in</a>
+                        </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+<script>
+
+    var sudoku = [[], [], [], [], [], [], [], [], []]
+
+    function createGrid() {
+
+        var myContainer = document.getElementById('container')
+
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < 9; j++) {
+                var myInput = document.createElement('input')
+
+                myInput.id = `${i}${j}`
+
+                var number = Math.ceil(Math.random() * 9)
+
+                myInput.row = i
+
+                myInput.col = j
+
+                if (isSafe(sudoku, i, j, number)) {
+                    myInput.value = number
+                    myInput.readOnly = true
+                }
+
+                else {
+                    number = 0
+                    myInput.value = ''
+
+                }
+
+                sudoku[i][j] = number
+
+                myContainer.appendChild(myInput)
+
+                myInput.oninput = function (e) {
+
+                    checkAnswer(sudoku, e)
+                }
+            }
+        }
+        console.log('sudoku:', sudoku)
+
+    }
+
+    createGrid()
+
+    isSafe(sudoku, i, j, number)
+
+    function isSafe(grid, row, col, num) {
+
+        for (var x = 0; x < 9; x++) {
+            if (grid[row][x] == num) {
+                return false
+            }
+        }
+
+        for (var y = 0; y < 9; y++) {
+            if (grid[y][col] == num) {
+                return false
+            }
+        }
+
+        var startRow = row - (row % 3)
+        var startCol = col - (col % 3)
+
+        for (var m = 0; m < 3; m++) {
+            for (n = 0; n < 3; n++) {
+                if (grid[m + startRow][n + startCol] == num) {
+                    return false
+                }
+            }
+
+
+        }
+        return true
+
+    }
+
+    function checkAnswer(grid, e) {
+        var row = e.target.row
+        var col = e.target.col
+        var num = Number(e.data)
+        var id = e.target.id
+
+        if (num <= 0 && num > 9) {
+            return false
+        }
+
+        if (num == '') {
+            return false
+        }
+
+        for (var x = 0; x < 9; x++) {
+            if (grid[row][x] == num) {
+                alert('row error')
+                showColors('red', id)
+                return false
+            }
+        }
+
+        for (var y = 0; y < 9; y++) {
+            if (grid[y][col] == num) {
+                alert('column error')
+                showColors('red', id)
+                return false
+            }
+        }
+
+        var startRow = row - (row % 3)
+        var startCol = col - (col % 3)
+
+        for (var m = 0; m < 3; m++) {
+            for (n = 0; n < 3; n++) {
+                if (grid[m + startRow][n + startCol] == num) {
+                    alert('grid error')
+                    showColors('red', id)
+                    return false
+                }
+            }
+        }
+
+        showColors('green', id)
+
+        return true
+
+    }
+
+    function showColors(color, id) {
+
+        var inp = document.getElementById(id)
+
+        if (color == 'red') {
+            inp.style.backgroundColor = 'red'
+        }
+
+        else {
+            inp.style.backgroundColor = 'green'
+        }
+
+    }
+
+
+
+</script>
+
+</html>
